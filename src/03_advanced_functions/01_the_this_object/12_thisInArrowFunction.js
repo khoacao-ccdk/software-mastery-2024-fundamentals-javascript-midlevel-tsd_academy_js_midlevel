@@ -17,7 +17,14 @@ Requirements:
 */
 
 function exploreThisInArrowFunction(arrowFunc, regularFunc) {
-    // Implement this function
+  // Implement this function
+  const myName = {
+    name: "Cody",
+    arrowFunc,
+    regularFunc,
+  };
+
+  return [myName.arrowFunc(), myName.regularFunc()];
 }
 
 module.exports = exploreThisInArrowFunction;

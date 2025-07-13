@@ -11,8 +11,17 @@ Requirements:
 - use async/await and fetch to get the data from the URL and parse it as JSON.
 */
 async function fetchData(url, delay = 0) {
-    // Implement this function
-    // const response = await fetch(url);
+  // Implement this function
+  return new Promise((resolve, reject) => {
+    try {
+      setTimeout(async () => {
+        const response = await (await fetch(url)).json();
+        resolve(response);
+      }, delay);
+    } catch (e) {
+      reject(e);
+    }
+  });
 }
 
 module.exports = fetchData;

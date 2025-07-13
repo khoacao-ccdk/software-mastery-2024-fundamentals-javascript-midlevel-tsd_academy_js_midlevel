@@ -19,8 +19,17 @@ console.log(output); // Output should be something like { result: 7, time: 0.123
 */
 
 function timeExecution(fn) {
-    // Your code here
-}
+  // Your code here
+  return (...args) => {
+    const startTime = Date.now();
+    const result = fn.apply(null, args);
+    const endTime = Date.now();
 
+    return {
+      result: result,
+      time: endTime - startTime,
+    };
+  };
+}
 
 module.exports = timeExecution;
